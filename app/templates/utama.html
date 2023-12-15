@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POSTEST 10</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,h4 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 70%;
+            margin: auto;
+            margin-bottom: 20px; /* Add some margin between forms */
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result-container {
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 70%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>POSTEST DATA MINING 10</h1>
+    <h4>by Reza Muchamad Hafis</h4>
+
+     <!-- INPUT DATA DIRI -->
+    <form action="/datadiri" method="post">
+        <h2>Input Data Diri</h2>
+        <label for="nim">Masukkan NIM:</label>
+        <input type="number" id="nim" name="nim">
+
+        <label for="nama">Masukkan Nama:</label>
+        <input type="text" id="nama" name="nama">
+
+        <label for="prodi">Masukkan Prodi:</label>
+        <input type="text" id="prodi" name="prodi">
+
+        <button type="Submit">Ouputkan</button>
+    </form>
+     <!-- INPUT Kalkulator -->
+    <form action="/hitung" method="POST">
+        <h2>Input Kalkulator</h2>
+        <label for="bil1">Masukkan bilangan 1:</label>
+        <input type="number" id="bil1" name="bil1">
+
+        <label for="bil2">Masukkan bilangan 2:</label>
+        <input type="number" id="bil2" name="bil2">
+
+        <button type="Submit">Hitung</button>
+    </form>
+
+    <!-- Hasil Data Diri & Kalkulator -->
+    <div class="result-container">
+        {% if hasilnim is defined %}
+            <h2>Hasil Data Diri</h2>
+            <label for="hasilnim">NIM:</label>
+            <input type="number" id="hasilnim" value="{{hasilnim}}" readonly>
+        {% endif %}
+
+        {% if hasilnama is defined %}
+            <label for="hasilnama">NAMA:</label>
+            <input type="text" id="hasilnama" value="{{hasilnama}}" readonly>
+        {% endif %}
+
+        {% if hasilprodi is defined %}
+            <label for="hasilprodi">PRODI:</label>
+            <input type="text" id="hasilprodi" value="{{hasilprodi}}" readonly>
+        {% endif %}
+
+        {% if hasil is defined %}
+            <h2>Hasil Kalkulator</h2>
+            <label for="hasil">Hasil Tambah:</label>
+            <input type="number" id="hasil" value="{{hasil}}" readonly>
+        {% endif %}
+
+        {% if hasil2 is defined %}
+            <label for="hasil2">Hasil Kurang:</label>
+            <input type="number" id="hasil2" value="{{hasil2}}" readonly>
+        {% endif %}
+
+        {% if hasil3 is defined %}
+            <label for="hasil3">Hasil Kali:</label>
+            <input type="number" id="hasil3" value="{{hasil3}}" readonly>
+        {% endif %}
+
+        {% if hasil4 is defined %}
+            <label for="hasil4">Hasil Bagi:</label>
+            <input type="number" id="hasil4" value="{{hasil4}}" readonly>
+        {% endif %}
+    </div>
+</body>
+</html>

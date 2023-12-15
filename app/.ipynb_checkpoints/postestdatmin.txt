@@ -1,0 +1,6 @@
+1. Buatlah form data diri yan g terdiri dari nim, nama , prodi. Tampilkan Hasilnya
+2. Modifikasi langkah praktikum dengan menambahkan operaso pengurangan, perkalian, pembagian. tampilkan hasilnya
+3. No 1 dan 2 dijadikan 1 interface
+
+DL: malam ini jam 23.59 link
+dont forget to install Flask di laptop anda 
